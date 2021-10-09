@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box, Button, Center } from '@chakra-ui/react'
 import Lottie from 'react-lottie'
-import foodJson from './food.json'
+import storeJson from './store.json'
 import { Link } from 'react-router-dom'
 
 const defaultOptions = {
   loop: true,
   autoplay: true,
-  animationData: foodJson,
+  animationData: storeJson,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
   },
