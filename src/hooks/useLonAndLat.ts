@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 export const useLonAndLat = () => {
   // 緯度
-  const [lon, setLon] = useState<number>(0)
-  // 経度
   const [lat, setLat] = useState<number>(0)
+  // 経度
+  const [lon, setLon] = useState<number>(0)
 
    // Geolocation APIに対応している
    if (navigator.geolocation) {
@@ -13,8 +13,8 @@ export const useLonAndLat = () => {
     navigator.geolocation.getCurrentPosition(
       // 取得成功した場合
       function(position) {
-        setLon(position.coords.latitude)
-        setLat(position.coords.longitude)
+        setLat(position.coords.latitude)
+        setLon(position.coords.longitude)
       },
       // 取得失敗した場合
       function(error) {
