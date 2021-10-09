@@ -1,11 +1,15 @@
 import React from 'react'
-import './App.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Top } from './Top'
+import { Search } from './Search'
 
 export const App = () => {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <Router>
+        <Route exact path="/" component={Top} />
+        <Route exact path="/search" component={Search} />
+      </Router>
+    </>
   )
 }
-
