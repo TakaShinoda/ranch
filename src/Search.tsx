@@ -33,6 +33,8 @@ export const Search = () => {
 
   return (
     <>
+      <p>{lat}</p>
+      <p>{lon}</p>
       <Card results={results} />
     </>
   )
