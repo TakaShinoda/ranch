@@ -7,7 +7,7 @@ import { Box, Center, Select } from '@chakra-ui/react'
 export const Search = () => {
   const [lat, lon] = useLonAndLat()
   const [results, setResults] = useState<restaurantData[]>([])
-  const [radius, setRadius] = useState<string>('1000')
+  const [radius, setRadius] = useState<string>('300')
 
   useEffect(() => {
     let unmounted = false
