@@ -30,10 +30,12 @@ export const Search = () => {
   }, [radius])
 
   const getDate = async () => {
+    const PROXY_URL = `https://cors-anywhere.herokuapp.com/`
+    const TARGET_URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=${radius}&types=restaurant&language=ja&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`
+    const URL = `${PROXY_URL}${TARGET_URL}`
     try {
-      const res = await fetch(
-        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=${radius}&types=restaurant&language=ja&key=${process.env.REACT_APP_GOOGLE_MAP_KEY}`
-      )
+      console.log(`${URL}`)
+      const res = await fetch(`${URL}`)
       const json = await res.json()
       setResults(json.results)
     } catch (err) {
